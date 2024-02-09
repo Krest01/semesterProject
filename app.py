@@ -4,7 +4,7 @@ import pyodbc
 app = Flask(__name__)
 
 # Database connection
-conn = pyodbc.connect('Driver={ODBC Driver 17 for SQL Server};Server=tcp:serverprojectlibrary.database.windows.net,1433;Database=dbProject;Uid=azureuser;Pwd={Masteryi123!};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;')
+conn = pyodbc.connect('Driver={ODBC Driver 18 for SQL Server};Server=tcp:serverprojectlibrary.database.windows.net,1433;Database=dbProject;Uid=azureuser;Pwd={Masteryi123!};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;')
 cursor = conn.cursor()
 
 @app.route('/')
