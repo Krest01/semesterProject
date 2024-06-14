@@ -1,11 +1,16 @@
 from flask import Flask, render_template, request, redirect, url_for
-import pyodbc
+import mysql.connector
 
 app = Flask(__name__)
 
 # Database connection
-conn = pyodbc.connect('Driver={ODBC Driver 18 for SQL Server};Server=tcp:serverprojectlibrary.database.windows.net,1433;Database=dbProject;Uid=azureuser;Pwd={Masteryi123!};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;')
-cursor = conn.cursor()
+mydb = mysql.connector.connect(
+    host="project-database.chwdu6kczeib.us-east-1.rds.amazonaws.com",
+    user="admin",
+    password="Kupa1234",
+    database="project"
+)
+cursor = mydb.cursor()
 
 @app.route('/')
 def home():
